@@ -75,7 +75,7 @@ export default {
             h1{
                 // margin:10rem auto 10rem;
                 margin:0 0 10rem -25rem;
-                font-size:6rem;
+                font-size:3rem;
                 display: flex;
                 flex-wrap: wrap;
                 width:5rem;
