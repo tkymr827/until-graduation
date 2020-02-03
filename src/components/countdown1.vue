@@ -75,7 +75,7 @@ export default {
             h1{
                 // margin:10rem auto 10rem;
                 margin:10rem 0 5rem -20rem;
-                font-size:3rem;
+                font-size:4rem;
                 display: flex;
                 flex-wrap: wrap;
                 width:5rem;
@@ -110,6 +110,19 @@ export default {
                         -webkit-box-reflect: below 1rem linear-gradient(
                         transparent,#0000); //反射してるやつ                        // -webkit-box-reflect: none;
                     }
+                }
+            }
+        }
+        @media screen and(max-width:375px) {
+            h1{
+                font-size:4rem;
+            }
+            .countdown{
+                .times{
+                    height:15rem;
+                    width:15rem;
+
+                    font-size:9rem;
                 }
             }
         }
