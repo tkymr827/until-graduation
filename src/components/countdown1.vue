@@ -74,8 +74,8 @@ export default {
         @media screen and (max-width: 480px) {
             h1{
                 // margin:10rem auto 10rem;
-                margin:10rem 0 5rem -2orem;
-                font-size:5rem;
+                margin:10rem 0 5rem -20rem;
+                font-size:3rem;
                 display: flex;
                 flex-wrap: wrap;
                 width:5rem;
