@@ -113,7 +113,7 @@ export default {
                 }
             }
         }
-        @media screen and(max-width:375px) {
+        @media screen and(max-width:380px) {
             h1{
                 font-size:4rem;
             }
