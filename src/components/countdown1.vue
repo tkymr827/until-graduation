@@ -1,14 +1,20 @@
 <template>
-    <div id="countdown1">
+    <div id="countdown1" @click="start">
         <main>
-            <h1>Until <span>Felica</span> <span>graduation</span></h1>
+            <h1>Until <span>Felica</span> <span>Graduation</span></h1>
             <div class="countdown">
                 <div class="day times">{{day}}<span>Days</span></div>
                 <div class="hour times">{{hour}}<span>Hours</span></div>
                 <div class="min times">{{min}}<span>Minutes</span></div>
                 <div class="sec times">{{sec}}<span>Seconds</span></div>
             </div>
+            <div class="passed" v-if="timeout===true">
+                <h2>卒業してから{{passed}}日経ちました</h2>
+            </div>
         </main>
+            <div class="train" v-if="timeout===true">
+                <img src="../assets/train.png">
+            </div>
     </div>
 </template>
 
@@ -18,7 +24,32 @@ export default {
     day: Number,
     hour: Number,
     min: Number,
-    sec: Number
+    sec: Number,
+    timeout: Boolean,
+    passed: Number
+  },
+  data () {
+    return {
+      status: false
+    }
+  },
+  watch: {
+    timeout: function () {
+      this.$confetti.start()
+    }
+  },
+  methods: {
+    start: function () {
+      this.status = !this.status
+      console.log(this.timeout)
+      if (this.timeout === true) {
+        if (this.status) {
+          this.$confetti.start()
+        } else {
+          this.$confetti.stop()
+        }
+      }
+    }
   }
 }
 </script>
@@ -33,11 +64,13 @@ export default {
     display:flex;
     justify-content: center;
     align-items: center;
+    position: relative;
     main{
         display: flex;
         align-items: center;
         flex-direction: column;
         margin-top:-15rem;
+        position: relative;
         h1{
             color:#fff;
             font-size:7rem;
@@ -126,6 +159,25 @@ export default {
                 }
             }
         }
+        .passed{
+            h2{
+                color:#fff;
+                font-size:5rem;
+            }
+        }
+    }
+        .train{
+            position: absolute;
+            animation:trainmove 7s linear infinite alternate;
+            bottom:4rem;
+        }
+}
+@keyframes trainmove {
+    0%{
+        transform: translateX(-350%)
+    }
+    100%{
+        transform: translateX(250%)
     }
 }
 </style>
