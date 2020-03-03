@@ -8,9 +8,11 @@
                 <div class="min times">{{min}}<span>Minutes</span></div>
                 <div class="sec times">{{sec}}<span>Seconds</span></div>
             </div>
-            <div class="passed" v-if="timeout===true">
-                <h2>卒業してから{{passed}}日経ちました</h2>
-            </div>
+            <transition>
+                <div class="passed" v-if="timeout===true">
+                    <h2>卒業してから{{passed}}日経ちました</h2>
+                </div>
+            </transition>
         </main>
             <div class="train" v-if="timeout===true">
                 <img src="../assets/train.png">
@@ -164,6 +166,13 @@ export default {
                 color:#fff;
                 font-size:5rem;
             }
+        }
+        .v-enter-active{
+            transition:opacity 1s;
+        }
+        .v-enter{
+            opacity:0;
+            transition:.1s;
         }
     }
         .train{
