@@ -23,7 +23,7 @@ export default {
   mounted () {
     setInterval(() => {
     //   const graduation = new Date(2020, 2, 4, 14, 25)
-      const graduation = new Date(2020, 2, 4, 9, 55)
+      const graduation = new Date(2020, 2, 4, 9, 57)
       const now = new Date()
       let until = graduation - now
 
