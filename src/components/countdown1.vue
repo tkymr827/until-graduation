@@ -2,7 +2,7 @@
     <div id="countdown1" @click="start">
         <main>
             <h1>Until <span>Felica</span> <span>Graduation</span></h1>
-            <div class="countdown">
+            <div class="countdown" v-if="timeout==false">
                 <div class="day times">{{day}}<span>Days</span></div>
                 <div class="hour times">{{hour}}<span>Hours</span></div>
                 <div class="min times">{{min}}<span>Minutes</span></div>
